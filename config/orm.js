@@ -13,16 +13,16 @@ function questionMark(num) {
 function objToSql(ob) {
     var arr = [];
 
-    for (var i in ob) {
-      var value = ob[i];
+    for (var property in ob) {
+      var value = ob[property];
 
-      if (Object.hasOwnProperty.call(ob, i)) {
+      if (Object.hasOwnProperty.call(ob, property)) {
         
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
 
-        arr.push(i + "=" + value);
+        arr.push(property + "=" + value);
       }
     }
     return arr.toString();
