@@ -1,0 +1,30 @@
+<h1>Burgers</h1>
+
+<h2>Not yet devoured</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Devoured</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger-block devoured=false}}
+    {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Add burger</h2>
+<form>
+    <div class="form-group">
+        <label for="burgerInput">Enter a burger</label>
+        <textarea class="form-control" id="burgerInput" rows="2"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
