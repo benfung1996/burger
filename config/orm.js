@@ -31,6 +31,7 @@ function objToSql(ob) {
 var orm = {
     selectAll: function(table, res) {
         var query = "SELECT * FROM " + table + ";";
+
         connection.query(query, function(err, result) {
             if (err) {
                 throw err;
@@ -66,6 +67,7 @@ var orm = {
         query += condition;
 
         console.log(query);
+        console.log(object);
         connection.query(query, function(err, result) {
             if (err) {
                 throw err;
